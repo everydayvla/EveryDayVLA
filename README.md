@@ -8,6 +8,8 @@ This repository contains the code, robot control scripts, evaluation utilities, 
 
 [EveryDayVLA: A Vision-Language-Action Model for Affordable Robotic Manipulation](https://arxiv.org/abs/2511.05397)
 
+[Project Website](https://everydayvla.github.io/)
+
 EveryDayVLA combines a low-cost 6-DOF manipulator with a vision-language-action model for affordable robotic manipulation. The repo includes model training and inference code, Arduino/IK control scripts, dataset collection utilities, LIBERO/ALOHA evaluation code, plotting utilities, and an optional speech interface for robot commands.
 
 ## Repository Layout
