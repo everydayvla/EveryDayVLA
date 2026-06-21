@@ -1,0 +1,7 @@
+# Development utilities used by the Makefile and notebooks.
+black
+ipdb
+IPython
+jupyter
+ruff
+traitlets

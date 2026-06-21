@@ -1,0 +1,10 @@
+# Local robot control, inverse kinematics, camera, and dataset collection.
+Bezier
+ikpy
+keyboard
+matplotlib
+numpy<2
+opencv-python
+pyserial
+scipy
+tensorflow

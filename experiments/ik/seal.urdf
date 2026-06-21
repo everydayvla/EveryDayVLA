@@ -1,0 +1,184 @@
+<?xml version="1.0"?>
+<robot name="seal">
+
+  <!-- Base Link -->
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.1 0.1 0.01"/> <!-- Base link visualization -->
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 1"/> <!-- Blue color -->
+      </material>
+    </visual>
+  </link>
+
+  <!-- Articulation 1 -->
+  <link name="art1">
+    <visual>
+      <origin xyz="0 0 0.023" rpy="0 0 0"/> <!-- Center of the link -->
+      <geometry>
+        <cylinder length="0.046" radius="0.02"/> <!-- Length = 0.046 m -->
+      </geometry>
+      <material name="red">
+        <color rgba="1 0 0 1"/> <!-- Red color -->
+      </material>
+    </visual>
+  </link>
+
+  <!-- Fixed Joint Connecting Base to Art1 -->
+  <joint name="base_to_art1" type="fixed">
+    <parent link="base_link"/>
+    <child link="art1"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/> <!-- Origin at (0, 0, 0) -->
+  </joint>
+
+  <!-- Articulation 2 -->
+  <link name="art2">
+    <visual>
+      <origin xyz="0 0 0.0095" rpy="0 0 0"/> <!-- Center of the link -->
+      <geometry>
+        <cylinder length="0.019" radius="0.02"/> <!-- Length = 0.019 m -->
+      </geometry>
+      <material name="green">
+        <color rgba="0 1 0 1"/> <!-- Green color -->
+      </material>
+    </visual>
+  </link>
+
+  <!-- Joint 1: Connects Art1 and Art2 -->
+  <joint name="joint1" type="revolute">
+    <parent link="art1"/>
+    <child link="art2"/>
+    <origin xyz="0 0 0.056" rpy="0 0 0"/> <!-- Origin at (0, 0, 0.046) -->
+    <axis xyz="0 0 1"/> <!-- Rotation around Z-axis -->
+    <limit lower="-1.570795" upper="1.570795" effort="10" velocity="1"/>
+  </joint>
+
+  <!-- Articulation 3 -->
+  <link name="art3">
+    <visual>
+      <origin xyz="0 0 0.052" rpy="0 0 0"/> <!-- Center of the link -->
+      <geometry>
+        <cylinder length="0.104" radius="0.02"/> <!-- Length = 0.104 m -->
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 1"/> <!-- Blue color -->
+      </material>
+    </visual>
+  </link>
+
+  <!-- Joint 2: Connects Art2 and Art3 -->
+  <joint name="joint2" type="revolute">
+    <parent link="art2"/>
+    <child link="art3"/>
+    <origin xyz="0 0 0.023" rpy="0 0 0"/> <!-- Origin at (0, 0, 0.019) -->
+    <axis xyz="0 1 0"/> <!-- Rotation around Y-axis -->
+    <!-- <limit lower="-1.5708" upper="1.5708" effort="10" velocity="1"/> Limited rotation -->
+    <limit lower="-1.570795" upper="1.570795" effort="10" velocity="1"/>
+  </joint>
+
+  <!-- Articulation 4 -->
+  <link name="art4">
+    <visual>
+      <origin xyz="0 0 0.0095" rpy="0 0 0"/> <!-- Center of the link -->
+      <geometry>
+        <cylinder length="0.019" radius="0.02"/> <!-- Length = 0.019 m -->
+      </geometry>
+      <material name="red">
+        <color rgba="1 0 0 1"/> <!-- Red color -->
+      </material>
+    </visual>
+  </link>
+
+  <!-- Joint 3: Connects Art3 and Art4 -->
+  <joint name="joint3" type="revolute">
+    <parent link="art3"/>
+    <child link="art4"/>
+    <origin xyz="0 0 0.104" rpy="0 0 0"/> <!-- Origin at (0, 0, 0.104) -->
+    <!-- <axis xyz="0 0 1"/> -->
+    <axis xyz="0 1 0"/>
+    <!-- <limit lower="-3.14159" upper="3.14159" effort="10" velocity="1"/> -->
+    <limit lower="-0.1" upper="2" effort="10" velocity="1"/>
+  </joint>
+
+  <!-- Articulation 5 -->
+  <link name="art5">
+    <visual>
+      <origin xyz="0 0 0.047" rpy="0 0 0"/> <!-- Center of the link -->
+      <geometry>
+        <cylinder length="0.094" radius="0.02"/> <!-- Length = 0.094 m -->
+      </geometry>
+      <material name="green">
+        <color rgba="0 1 0 1"/> <!-- Green color -->
+      </material>
+    </visual>
+  </link>
+
+  <!-- Joint 4: Connects Art4 and Art5 -->
+  <joint name="joint4" type="revolute">
+    <parent link="art4"/>
+    <child link="art5"/>
+    <origin xyz="0 0 0.019" rpy="0 0 0"/> <!-- Origin at (0, 0, 0.019) -->
+    <!-- <axis xyz="0 1 0"/> -->
+    <axis xyz="0 0 1"/>
+     <limit lower="-1.5" upper="1.5" effort="10" velocity="1"/>
+  </joint>
+
+  <!-- Articulation 6 -->
+  <link name="art6">
+    <visual>
+      <origin xyz="0 0 0.03" rpy="0 0 0"/> <!-- Center of the link -->
+      <geometry>
+        <cylinder length="0.06" radius="0.02"/> <!-- Length = 0.06 m -->
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 1"/> <!-- Blue color -->
+      </material>
+    </visual>
+  </link>
+
+  <!-- Joint 5: Connects Art5 and Art6 -->
+  <joint name="joint5" type="revolute">
+    <parent link="art5"/>
+    <child link="art6"/>
+    <origin xyz="0 0 0.094" rpy="0 0 0"/> <!-- Origin at (0, 0, 0.094) -->
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.5" upper="1.5" effort="10" velocity="1"/>
+  </joint>
+
+  <!-- Gripper -->
+  <link name="gripper">
+    <visual>
+      <origin xyz="0 0 0.0525" rpy="0 0 0"/> <!-- Center of the gripper -->
+      <geometry>
+        <box size="0.05 0.05 0.105"/> <!-- Length = 0.105 m -->
+      </geometry>
+      <material name="gray">
+        <color rgba="0.5 0.5 0.5 1"/> <!-- Gray color -->
+      </material>
+    </visual>
+  </link>
+
+  <!-- Joint 6: Connects Art6 and Gripper -->
+  <joint name="joint6" type="revolute">
+    <parent link="art6"/>
+    <child link="gripper"/>
+    <origin xyz="0 0 0.06" rpy="0 0 0"/> <!-- Origin at (0, 0, 0.06) -->
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.57" upper="1.57" effort="10" velocity="1"/> <!-- Full rotation -->
+  </joint>
+
+  <!-- Joint 6: Connects Art6 and Gripper -->
+  <joint name="gripper_tip" type="fixed">
+    <parent link="gripper"/>
+    <child link="gripper_tip"/>
+    <origin xyz="0 0 0.105" rpy="0 0 0"/>
+    <limit lower="0" upper="1.570795" effort="10" velocity="1"/> <!-- Full rotation -->
+  </joint>
+
+  <link name="gripper_tip">
+  </link>
+
+</robot>

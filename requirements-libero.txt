@@ -1,0 +1,3 @@
+# LIBERO simulation evaluation dependencies.
+-r requirements-core.txt
+-r vla/experiments/robot/libero/libero_requirements.txt

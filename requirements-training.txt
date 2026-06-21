@@ -1,0 +1,24 @@
+# Training and fine-tuning dependencies for the Prismatic/OpenVLA code.
+-r requirements-core.txt
+
+accelerate
+diffusers
+dlimp
+einops
+h5py
+huggingface-hub
+jsonlines
+mamba-ssm
+ninja
+packaging
+peft
+pyyaml
+tensorflow
+tensorflow-datasets
+tensorflow-graphics
+tqdm
+wandb
+
+# FlashAttention is recommended for GPU training, but it is platform/CUDA-specific.
+# Install it manually after matching your CUDA/PyTorch stack, for example:
+# pip install "flash-attn==2.5.5" --no-build-isolation

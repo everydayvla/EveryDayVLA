@@ -1,0 +1,6 @@
+# ALOHA robot evaluation dependencies.
+-r requirements-core.txt
+-r vla/experiments/robot/aloha/requirements_aloha.txt
+
+# The real robot path also expects ROS/Interbotix packages such as:
+# rospy, cv_bridge, sensor_msgs, interbotix_xs_modules, interbotix_xs_msgs

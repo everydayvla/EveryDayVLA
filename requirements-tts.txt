@@ -1,0 +1,8 @@
+# Voice command interface dependencies.
+openai
+pyaudio
+pydub
+
+# System packages are also required:
+# - FFmpeg for pydub playback
+# - PortAudio development libraries for PyAudio

@@ -1,0 +1,10 @@
+# Core model serving and inference dependencies.
+-r vla/requirements-min.txt
+
+numpy<2
+Pillow
+requests
+draccus
+json_numpy
+fastapi
+uvicorn
