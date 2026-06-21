@@ -1,6 +1,6 @@
 # EveryDayVLA: A Vision-Language-Action Model for Affordable Robotic Manipulation
 
-![EveryDayVLA overview](assets/overview.png)
+<img src="assets/overview.png" alt="EveryDayVLA overview" width="70%">
 
 This repository contains the code, robot control scripts, evaluation utilities, and voice interface used for the EveryDayVLA paper:
 
