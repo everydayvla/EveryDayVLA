@@ -20,6 +20,7 @@ EveryDayVLA combines a low-cost 6-DOF manipulator with a vision-language-action 
 - `experiments/ik/` - Inverse-kinematics experiments and collected 6-DOF trajectories.
 - `dataset_collection/` - Dataset collection, IK control, webcam, and Arduino-facing scripts.
 - `arduino/` - Arduino sketches for 6-DOF servo control.
+- `mechanical` - 3D files for our 6-DOF manipulator.
 
 ## Installation
 
