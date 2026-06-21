@@ -1,5 +1,7 @@
 # EveryDayVLA: A Vision-Language-Action Model for Affordable Robotic Manipulation
 
+![EveryDayVLA overview](assets/overview.png)
+
 This repository contains the code, robot control scripts, evaluation utilities, and voice interface used for the EveryDayVLA paper:
 
 [EveryDayVLA: A Vision-Language-Action Model for Affordable Robotic Manipulation](https://arxiv.org/abs/2511.05397)
@@ -12,7 +14,7 @@ EveryDayVLA combines a low-cost 6-DOF manipulator with a vision-language-action 
 - `experiments/inference/` - Local robot inference clients that call a VLA action server and send actions to the arm.
 - `experiments/inference/tts/` - Speech-to-text and text-to-speech interface for spoken robot commands.
 - `experiments/ik/` - Inverse-kinematics experiments and collected 6-DOF trajectories.
-- `software/` - Dataset collection, IK control, webcam, and Arduino-facing scripts.
+- `dataset_collection/` - Dataset collection, IK control, webcam, and Arduino-facing scripts.
 - `arduino/` - Arduino sketches for 6-DOF servo control.
 
 ## Installation
